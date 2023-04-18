@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\inetpub\wwwroot\asplearn</_PublishTargetUrl>
+    <History>True|2023-02-14T12:38:49.7293017Z;True|2023-02-09T17:12:37.7925642+04:00;False|2023-02-09T17:11:35.2405977+04:00;False|2023-02-09T17:10:27.1573226+04:00;False|2023-02-09T17:08:15.7895465+04:00;True|2023-02-09T17:03:13.9848304+04:00;True|2023-02-09T16:35:42.3983761+04:00;True|2023-02-09T16:34:29.9232645+04:00;True|2023-02-09T16:33:51.9700043+04:00;False|2023-02-09T16:32:29.8214277+04:00;True|2023-02-09T15:41:23.0240313+04:00;True|2023-02-09T15:32:00.2017437+04:00;True|2023-02-09T15:30:02.9736759+04:00;True|2023-02-09T15:29:56.4401219+04:00;True|2023-02-09T15:29:06.6156231+04:00;True|2023-02-09T15:19:07.4247775+04:00;True|2023-02-09T15:16:26.4070476+04:00;True|2023-02-09T15:14:37.6297715+04:00;True|2023-02-09T14:43:15.1367782+04:00;True|2023-02-09T14:34:01.7258939+04:00;True|2023-02-09T14:30:53.4086775+04:00;True|2023-02-09T14:28:01.3250550+04:00;True|2023-02-09T14:06:52.7875721+04:00;True|2023-02-09T14:02:58.0475651+04:00;True|2023-02-09T13:35:29.8662225+04:00;True|2023-02-09T13:21:48.3669168+04:00;True|2023-02-09T13:08:27.8159234+04:00;True|2023-02-09T11:18:23.8305705+04:00;True|2023-02-09T11:17:21.2352549+04:00;True|2023-02-09T11:12:48.6986387+04:00;True|2023-02-09T11:09:45.0374594+04:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnectionString">
+      <Value>Data Source=EPRUMOSW0510%3bInitial Catalog=Northwind%3bIntegrated Security=True%3bConnect Timeout=30%3bEncrypt=False%3bTrustServerCertificate=False%3bApplicationIntent=ReadWrite%3bMultiSubnetFailover=False</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

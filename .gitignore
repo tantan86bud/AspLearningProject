@@ -1,0 +1,16 @@
+﻿################################################################################
+# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
+################################################################################
+
+/AspLearningProject/AspLearningProject/bin/
+/AspLearningProject/AspLearningProject/obj/
+/AspLearningProject/.vs/
+/AspLearningProject/AspLearningProject.Tests/obj
+/AspLearningProject/AspLearningProject.Tests/bin/Debug/net6.0
+/AspLearningProject/AspLearningProject.Tests/bin/Release/net6.0
+/AspLearningProject/bin/Release
+/AspLearningProject/obj
+/AspLearningProject/ConsoleClient/bin/Debug/net6.0
+/AspLearningProject/ConsoleClient/obj
+/AspLearningProject/AspLearningProject.API.Tests/bin/Debug/net6.0
+/AspLearningProject/AspLearningProject.API.Tests/obj

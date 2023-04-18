@@ -1,0 +1,20 @@
+﻿@model AspLearningProject.Models.CategoryEditViewModel
+
+<img src=@ViewBag.Image></img>
+<hr />
+<div  style="width: 50%">
+    @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal " }))
+    {
+        <div class="form-group visually-hidden">
+            <div class="col-sm-10">
+                @Html.EditorFor(m => m.CategoryID,new { htmlAttributes =  new { @class = "form-control visually-hidden"}})
+            </div>
+        </div>
+        <div class="input-group">
+            @Html.TextBoxFor(m=>m.FilePath, new {type = "file", @class = "form-control" } )
+
+            <button type="submit" class="btn btn-outline-secondary">Save Image</button>
+       
+        </div>      
+    }
+</div>

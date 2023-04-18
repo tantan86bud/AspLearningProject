@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="AspLearningProject/wwwroot/css/bootstrap/css/bootstrap.css" />
+    <script src="AspLearningProject/wwwroot/Content/Scripts/jquery-3.6.3.js"></script>
+</head>
+<body>
+
+    <div>
+
+        <input type="button" value="Show all products" onclick="findProduct();" />
+        <input type="button" value="Show all categories" onclick="findCategory();" />
+        <p id="product"></p>
+        <p id="category"></p>
+
+    </div>
+<div>
+	<table style="display: none" id="table-product" class="table table-dark table-striped">
+		<thead>
+		<tr>
+			<th>Id</th>
+			<th>ProductName</th>
+			<th>CompanyName</th>
+			<th>CategoryName</th>
+			<th>QuatityPerUnit</th>
+			<th>UnitPrice</th>
+			<th>UnitsInStock</th>
+			<th>UnitsOnOrder</th>
+			<th>ReorderLevel</th>
+			<th>Discontinued</th>
+		</tr>
+		</thead>
+		<tbody id="data-output-product">
+		</tbody>
+	</table>
+</div>
+<div>
+	<table style="display: none" id="table-category" class="table table-dark table-striped">
+		<thead>
+		<tr>
+			<th>CategoryID</th>
+			<th>CategoryName</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody id="data-output-category">
+		</tbody>
+	</table>
+</div>
+
+<script>
+   function findProduct() {
+		find("product");
+	}
+    function findCategory() {
+        find("category");
+    }
+    var uri = 'http://localhost:5263/api/';
+
+    function RenderProduct(products) {
+        let placeholder = document.querySelector("#data-output-product");
+        let out = "";
+        for (let product of products) {
+            out += `
+         <tr>
+            <td>${product.productID}</td>
+            <td>${product.productName}</td>
+			<td>${product.supplier.companyName}</td>
+            <td>${product.category.categoryName}</td>
+            <td>${product.quantityPerUnit}</td>
+            <td>${product.unitPrice}</td>
+            <td>${product.unitsInStock}</td>
+			<td>${product.unitsOnOrder}</td>
+			<td>${product.reorderLevel}</td>
+			<td>${product.discontinued}</td>
+         </tr>
+      `;
+        }
+
+        placeholder.innerHTML = out;
+	}
+    function RenderCategory(categories) {
+        let placeholder = document.querySelector("#data-output-category");
+        let out = "";
+        for (let category of categories) {
+            out += `
+         <tr>
+            <td>${category.categoryID}</td>
+            <td>${category.categoryName}</td>
+			<td>${category.description}</td>
+         </tr>
+      `;
+        }
+
+        placeholder.innerHTML = out;
+    }
+	function find(valueController) {
+		if (valueController == "product") {
+
+			$.getJSON(uri + valueController)
+				.done(function (data) {
+                    RenderProduct(data);
+					$("#table-product").css("display", "block");
+
+				})
+				.fail(function (jqXHR, textStatus, err) {
+					$('#product').text('Error: ' + err);
+				});
+		}
+		else {
+            $.getJSON(uri+valueController)
+                .done(function (data) {
+                    RenderCategory(data);
+                    $("#table-category").css("display", "block");
+
+                })
+                .fail(function (jqXHR, textStatus, err) {
+                    $('#category').text('Error: ' + err);
+                });
+		}
+
+		}
+        
+</script>
+</body>
+</html>

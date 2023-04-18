@@ -1,0 +1,23 @@
+[
+  {
+    "outputFileName": "wwwroot/js/bundle.js",
+    "inputFiles": [
+      "wwwroot/Content/Scripts/jquery.validate.js",
+      "wwwroot/Content/Scripts/jquery-3.6.3.js",
+      "wwwroot/Content/Scripts/jquery.validate-vsdoc.js",
+      "wwwroot/Content/Scripts/jquery.validate.unobtrusive.min.js",
+      "wwwroot/Content/Scripts/jquery.validate.unobtrusive.js",
+      "wwwroot/Content/Scripts/jquery.validate.min.js",
+      "wwwroot/css/bootstrap/js/bootstrap.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/bundlecss/style.css",
+    "inputFiles": [
+      "wwwroot/css/bootstrap/css/bootstrap.css",
+      "wwwroot/css/bootstrap/css/bootstrap-grid.css",
+      "wwwroot/css/bootstrap/css/bootstrap-reboot.css",
+      "wwwroot/css/bootstrap/css/bootstrap-utilities.css"
+    ]
+  }
+]

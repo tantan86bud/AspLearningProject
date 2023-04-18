@@ -1,0 +1,19 @@
+﻿@model List<AspLearningProject.Models.BreadcrumbElement>
+@if(Model!=null)
+{
+	<div class="breadcrumb">
+		@foreach (var item in Model)
+		{
+			@if (item.IsEnd == false)
+			{
+				@Html.ActionLink(item.Title, item.ActionFrom, item.ControllerFrom)
+				<span>/ </span>
+			}
+
+			else
+			{
+				<span>@item.Title </span>
+			}
+		}
+	</div>
+}
