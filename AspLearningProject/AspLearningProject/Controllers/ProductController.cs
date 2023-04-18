@@ -9,7 +9,6 @@ using AspLearningProject.Models.DataLayer.Repository;
 using AspLearningProject.Models.DataLayer.Repository.Implementation;
 using AspLearningProject.Models.Interfacies;
 using AspLearningProject.Filters;
-using Azure;
 using System.Net;
 
 namespace AspLearningProject.Controllers

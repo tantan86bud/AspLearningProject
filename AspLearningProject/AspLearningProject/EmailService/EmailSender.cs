@@ -4,8 +4,6 @@ using EmailService;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using System.Net;
 using System.Net.Mail;
-using NuGet.Protocol;
-
 
 
 namespace AspLearningProject.EmailService

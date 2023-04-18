@@ -1,14 +1,12 @@
 ﻿using AspLearningProject.API.Models;
-using AspLearningProject.Models;
 using AspLearningProject.Models.DataLayer;
 using AspLearningProject.Models.DataLayer.Repository;
 using AspLearningProject.Models.Interfacies;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using AspLearningProject.API.Controllers.Models;
 using AutoMapper;
-using static DevExpress.Xpo.Helpers.AssociatedCollectionCriteriaHelper;
+
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
