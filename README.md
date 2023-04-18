@@ -1,92 +1,76 @@
 # ASPLearning
 
-
-
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://git.rntgroup.com/tatiana_budnikova/ASPLearning.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://git.rntgroup.com/tatiana_budnikova/ASPLearning/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
 ## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Tasks of project:
+1.	Create a web site with the following pages:
+–	The Home page that contains links to other pages
+–	The Categories page. Shows a list of categories without images
+–	The Products page. Shows a table with the products
+2.	 Add a configuration feature that supports two parameters:
+–	Database connection string
+–	Maximum (M) amount of products shown on the Product page (show only first M products, others – ignored; if M == 0, then show all products)
+3.	 Add edit forms (New and Update) for the Products
+4.	Add two client libraries to the project:
+–	Bootstrap
+–	jQuery Unobtrusive Validation
+For Bootstrap: Apply Bootstrap styles to site pages/forms
+5.	Change links to Categories and Product pages to navigation bar with the "hamburger" button
+6.	For jQuery Unobtrusive Validation:
+–	Configure client-side validation for edited products
+7.	Configure logging:
+–	configure writing logs into a log file
+–	write the following events and information: application startup (Additional information: application location - folder path); configuration reading (Additional information: current configuration values)
+8.	Create a custom error handler, which:
+–	logs exception
+–	returns error page with associated information (to look up appropriate records in the logs)
+9.	Add separate projects with tests
+10.	Add new Action into Category Controller, which return category image:
+–	An image should be sent as a binary stream with the correct Content-Type (for referencing from HTML pages).Please note that test data for Northwind Categories contain broken images (it’s BMP pictures, but the first 78 bytes is garbage)
+11.	Add links to images in the Category list.
+12.	Add edit form for change image in Category (upload a new image)
+Configure routing to enable getting images by not only the standard path {controller}/{action}/…, butalso by images/{image_id}
+13.	Create your own middleware component for image caching. Middleware should:
+–	Check Content-Type for every response, and, if any image of a valid format returned: Keep the image on the disk (as file);
+If subsequent requests access the same image, return it from the cache directory;
+–	Support the following options:
+The path for the cache directory;
+Max count of cached images;
+Cache expiration time (if no requests during this time, cache cleaned)
+–	Include the middleware into the request pipeline of your application
+14.	Add MVC filter for logging calls to Actions. The filter should:
+–	Log Action start/end
+–	Provide an option to turn on/off logging parameters of the invoked Action method (off by default)
+15.	Create a View Component to visualize simple breadcrumbs. View Component should show navigation in 2 variants:
+–	Home > Entity > New / Edit (e.g. Home > Products > Create New) – if a user opens the edit/create form.
+–	Home > Entity (e.g. Home > Products) – if a user opens the list/table of entities
+–	Apply this component to all pages except the Home page.
+16.	Create Html Helper and Tag Helper, which produce links to images in the format
+as images/{image_id}. Usage of those helpers can look like:
+–	Html Helper @Html.NorthwindImageLink(imageId, “Link text”);
+–	Tag Helper <a northwind-id="imageId">Link text</a>
+17.	Create API Controllers, which return collections of Categories and Products.
+–	For Products, add the following operations: create, update, delete
+–	For Categories, add the following operations: get and update image.
+18.	Create two simple clients:
+–	Console .Net [Core]
+–	HTML Page + JS
+19.	 Add generation of metadata and (optional) API documentation, based on Swashbuckle.AspNetCore.
+20.	Create a separate unit test project, and generate client proxy with the use of any of the tools.
+21.	Add user registration and authentication based on ASP.Net Core Identity. The following features should be implemented and available:
+–	User self-registration
+–	User authentication by login and password
+–	Password reset (by sending an email with the secure URL)
+22.	Integrate the website with Azure AD sign-in. User can choose which authentication provider to use: 
+–	Login/password (local DB)
+–	Azure AD
+23.	Add authorization (access check) by the role model (where a role is a user group). For demonstration:
+–	Add a new controller (for Administrators) with a single Action, which shows all site
+ users
+–	Allow access to this controller only for the Administrators group
+24.	Add to the compilation pipeline the following steps:
+–	Bundling and minification all .css and js files in the project
+–	Precompilation of views
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
