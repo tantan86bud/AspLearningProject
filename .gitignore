@@ -14,3 +14,6 @@
 /AspLearningProject/ConsoleClient/obj
 /AspLearningProject/AspLearningProject.API.Tests/bin/Debug/net6.0
 /AspLearningProject/AspLearningProject.API.Tests/obj
+/AspLearningProject/AspLearningProject.API.Tests/bin/Release/net6.0
+/AspLearningProject/ConsoleClient/bin/Release/net6.0/runtimes/win/lib/net6.0
+/AspLearningProject/ConsoleClient/bin/Release/net6.0

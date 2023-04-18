@@ -9,7 +9,7 @@ namespace AspLearningProject.API.Tests
 {
     public sealed class AppRun: IDisposable
     {
-        private const string PathToProject = "D:\\ASPLearning\\AspLearningProject\\AspLearningProject\\AspLearningProject.csproj";
+        private const string PathToProject = "C:\\Users\\Tatiana_Budnikova.EPAM\\Desktop\\ASPLearning\\AspLearningProject\\AspLearningProject\\AspLearningProject.csproj";
         private Process process;
 
         public AppRun()
