@@ -49,10 +49,7 @@ namespace AspLearningProject
 
             });
            
-            services.AddDbContext<AppDbContext>(options =>
-            {
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnectionString"));
-            });
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnectionString")));
             services.AddDbContext<DataContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnectionString")));
          
             services.AddTransient<IMemoryCaheImage, MemoryCaheImage>();
@@ -86,7 +83,6 @@ namespace AspLearningProject
                         .AllowAnyHeader()
                         .AllowAnyMethod());
             });
-            services.AddMvc(options => options.Filters.Add(typeof(LogAttribute)));
             
             services.AddSwaggerGen(options => {
                                         options.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = "API" });
